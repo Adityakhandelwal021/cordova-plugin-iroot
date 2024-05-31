@@ -150,6 +150,54 @@
         return YES;
     }
 
+// Added Frida detection
+    else if ([[NSFileManager defaultManager] fileExistsAtPath:@"/usr/sbin/frida-server"])
+    {
+        return YES;
+    }
+    else if ([[NSFileManager defaultManager] fileExistsAtPath:@"/usr/bin/frida-server"])
+    {
+        return YES;
+    }
+    else if ([[NSFileManager defaultManager] fileExistsAtPath:@"/usr/local/bin/frida-server"])
+    {
+        return YES;
+    }
+    // Added Shadow detection
+    else if ([[NSFileManager defaultManager] fileExistsAtPath:@"/Library/MobileSubstrate/DynamicLibraries/Shadow.dylib"])
+    {
+        return YES;
+    }
+    // Added Substrate detection
+    else if ([[NSFileManager defaultManager] fileExistsAtPath:@"/Library/MobileSubstrate/MobileSubstrate.dylib"])
+    {
+        return YES;
+    }
+    // Added Palera1n detection
+    else if ([[NSFileManager defaultManager] fileExistsAtPath:@"/var/binpack"])
+    {
+        return YES;
+    }
+    else if ([[NSFileManager defaultManager] fileExistsAtPath:@"/var/jb"])
+    {
+        return YES;
+    }
+    // Added Substitute detection
+    else if ([[NSFileManager defaultManager] fileExistsAtPath:@"/usr/lib/substitute-inserter.dylib"])
+    {
+        return YES;
+    }
+    else if ([[NSFileManager defaultManager] fileExistsAtPath:@"/usr/lib/substitute-loader.dylib"])
+    {
+        return YES;
+    }
+    else if ([[NSFileManager defaultManager] fileExistsAtPath:@"/etc/apt/sources.list.d/shadow.sources"])
+    {
+        return YES;
+    }
+
+
+
     NSError *error;
     NSString *testWriteText = @"Jailbreak test";
     NSString *testWritePath = @"/private/jailbreaktest.txt";
