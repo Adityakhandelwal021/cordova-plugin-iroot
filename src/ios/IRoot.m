@@ -243,13 +243,19 @@
 //  Techniques from http://highaltitudehacks.com/2013/12/17/ios-application-security-part-24-jailbreak-detection-and-evasion/
 //
 
+//
+//  IRoot.m
+//  Copyright (c) 2014 Lee Crossley - http://ilee.co.uk
+//  Techniques from http://highaltitudehacks.com/2013/12/17/ios-application-security-part-24-jailbreak-detection-and-evasion/
+//
+
 #import "Cordova/CDV.h"
 #import "Cordova/CDVViewController.h"
 #import "IRoot.h"
 
 @implementation IRoot
 
-- (void) isRooted:(CDVInvokedUrlCommand*)command;
+- (void)isRooted:(CDVInvokedUrlCommand*)command;
 {
     CDVPluginResult *pluginResult;
 
@@ -268,7 +274,7 @@
     }
 }
 
-- (bool) jailbroken {
+- (bool)jailbroken {
 
 #if !(TARGET_IPHONE_SIMULATOR)
 
@@ -309,7 +315,8 @@
         @"/var/lib/dpkg/info/org.coolstar.sileo.list",
         @"/usr/sbin/frida-server",
         @"/usr/bin/frida-server",
-        @"/usr/local/bin/frida-server"
+        @"/usr/local/bin/frida-server",
+        @"/private/preboot/palera1n"
     ];
 
     for (NSString *path in jailbreakPaths) {
